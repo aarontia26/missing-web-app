@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/profile-style.css">
+        
+        <meta name="description" content="Profile Page">
+        <title>Your Profile</title>
+    
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-default navbar-expand-md" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    
+                    <!-- Collapsible Button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-navbar">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <!-- Name of the Site -->
+                    <a class="navbar-brand" href="index.html">Lost and Found</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="collapsible-navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#">Family Members</a></li>
+                        <li><a href="#">Report Missing</a></li>
+                        <li><a href="#">Bulletin Board</a></li>
+                        <li><a href="#" id="logout">Logout</a></li>
+                    </ul>
+                </div> 
+            </div>
+        </nav>
+
+        <!-- Button trigger modal -->
+<button type="button" id="modalShow" style="display: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLongTitle">Message</h>
+          
+        </div>
+        <div class="modal-body">
+            <i id="icon" ></i>
+            <h4 id="messageShow"></h4>
+        </div>
+        <div class="modal-footer">
+            
+            <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <div class="grid-container">
+            <div class="grid-title">
+                <h3>Your Profile</h3>
+                <h4>Edit your name, avatar etc.</h4>
+                <button type="button" class="discardbtn" style="display: none;" id="discardButton">Discard Changes</button>
+            </div>
+                <div class="grid-avatar">
+                    <img id="profileImg" width="200px" height="200px">
+                    <input type="file" id="uploadButtonFile" style="display: none;" accept="image/png, image/jpg, image/jpeg">
+                    <button id="uploadButton" style="display: none;">Upload</button>
+                </div>
+            <form class="main" id="profileForm">
+                <div class="data grid-firstname">
+                    <label class="">First Name</label>
+                    <input type="text" id="fName" name="inputs" readonly>
+                </div>
+                <div class="data grid-lastname">
+                    <label class="">Last Name</label>
+                    <input type="text" id="lName" name="inputs" readonly>
+                </div>
+                <div class="data grid-gender">
+                    <label class="">Gender</label>
+                    <input type="text" id="gender" name="inputs" readonly>
+                </div>
+                <div class="data grid-birthday">
+                    <label class="">Birthday</label>
+                    <input type="date" id="birthdate" name="inputs" readonly>
+                </div>
+                <div class="data grid-address">
+                    <label class="">Address</label>
+                    <textarea type="text" id="address" name="inputs" readonly></textarea>
+                </div>
+                <div class="data grid-phonenum">
+                    <label class="">Phone Number</label>
+                    <input type="tel" id="phoneNo" name="phone" maxlength="16" readonly>
+                </div>
+                <div class="data grid-emailad">
+                    <label class="">Email Address</label>
+                    <i id="verifyIcon"></i>
+                    <span id="verifyCheck"></span>
+                    <input type="email" id="email" readonly>
+                    <a href="#" id="verifySend"></a>
+                </div>
+                
+                <!--
+
+                -->
+                <div class="data grid-pass" id="passwordDiv">
+                    <label class="">Password</label>
+                    <input type="password" id="password" readonly>
+                </div>
+                <div class="data grid-save">
+                    <button type="button" id="updateButton">Update Profile</button>
+                    <button type="submit" id="saveButton" hidden>Save Changes</button> 
+                </div>
+            </form>          
+        </div>
+        
+        <footer class="footer-grid">
+            <div class="main-content">
+                <h2>Lost and Found</h2>
+                <p>Growing numbers of cases about a missing person, especially after the typhoons and flooding that we are all experiencing, numerous cases cannot solve because of lack of information to communicate with the family of the missing person. This web application will lessen those public issues about missing persons that turn into leftover cases. In this web application you can register all your family member, browse to the cases of missing person that was posted to the bulletin board of the web app and if you have information about the location of the missing person, you can directly communicate to the family member of the person by the information corresponds to the posted missing person.</p>
+            </div>
+            
+            <div class="hotline">
+                <div class="hotline-numbers">
+                    <h4>Emergency Hotline Numbers</h4>
+                    <div class="first-hotline">
+                        <h4>DSWD</h4>
+                        <p>Department of Social Welfare & Development</p>
+                        <p>(02) 856-3665;(02) 852-8081</p>
+                    </div>
+                    <div class="second-hotline">
+                        <h4>PNP</h4>
+                        <p>Philippine National Police</p>
+                        <p><span>117 or send TXT PNP to 2920</span></p>
+                        <p>(02) 723-6983</p>
+                        <p>(0917) 847-5757 (Text Hotline)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h4>Contact Us</h4>
+                <p><i class="fa fa-phone icon"></i>0908-930-4950</p>
+                <p><i class="fa fa-envelope icon"></i>lostandfound@gmail.com</p>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2021 Copyright: Lost and Found Web App</p>
+            </div>
+        </footer>
+        <!--------------------------FIRBASE LIBRARIES-------------------------------------------------->
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script> 
+
+        <script src="./js/config.js"></script>
+        <script src="./js/profile.js"></script>
+    </body>
+
+</html>

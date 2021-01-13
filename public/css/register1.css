@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400&display=swap');
+
+*{
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	outline: none;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	height: 100vh;
+    width: 100%;
+}
+/* START MODAL */
+.modal-header{
+	border-bottom: none;
+}
+.modal-body{
+	text-align: center;
+}
+.modal-body i{
+	font-size: 40px;
+	color: green;
+}
+.modal-footer{
+	border-top: none;
+}
+.modal{
+	top: 30%;
+}
+/* END MODAL */
+.navbar {
+    background-color: rgb(153, 102, 51);
+    transition: .5s ease background-color;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-brand:hover {
+    color: #ffffff !important;
+}
+
+.navbar-brand  {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+}
+
+.navbar-default .navbar-nav li a{
+    color: #D5D5D5;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-left: 40px;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #ffffff;
+}
+
+.center{
+	padding: 40px;
+}
+
+.wrapper{
+	background-color: burlywood;
+    width: fit-content;
+    height: fit-content;
+    padding: 30px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	margin: 0 auto;
+	
+}
+
+.wrapper .title{
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.wrapper .form{
+	width: 100%;
+}
+
+.wrapper .form .input_field{
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.wrapper .form .input_field label{
+	width: 100%;
+	margin-right: 10px;
+	font-size: 18px;
+}
+
+.wrapper .form .input_field .input,
+.wrapper .form .input_field .textarea{
+	width: 100%;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	line-height: 40px;
+	padding: 0 18px;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+}
+
+.wrapper .form .input_field .textarea{
+	resize: vertical;
+	height: 80px;
+	line-height: 30px;
+	padding: 10px 18px;
+}
+
+.wrapper .form .input_field .input:focus,
+.wrapper .form .input_field .textarea:focus{
+	border: 1px solid #AF9B60;
+}
+
+.wrapper .form .input_field .btn{
+	width: 100%;
+	padding: 8px 10px;
+	font-size: 18px;
+	border: 0;
+	background-color: rgb(153, 102, 51);
+	color: #ffffff;
+	cursor: pointer;
+	border-radius: 3px;
+	outline: none;
+	margin-top: 10px;
+}
+
+.wrapper .form .genderDiv{
+	font-size: 18px;
+	display: flex;
+}
+
+.wrapper .form .genderDiv .gender_{
+	width: 100%;
+}
+
+.wrapper .form .genderDiv .radio1{
+	width: 100%;
+	padding-left: 10px;
+}
+
+.wrapper .form .input_field:last-child{
+	margin-bottom: 0;
+}
+
+.wrapper .form .input_field .btn:hover{
+	background: saddlebrown;
+}
+
+.wrapper .form .option h2{
+	text-align: center;
+	margin-top: 40px;
+	font-size: 18px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.wrapper .form .option h2:before,
+.wrapper .form .option h2:after{
+	background-color: black;
+	content: " ";
+	display: inline-block;
+	height: 0.2px;
+	position: relative;
+	vertical-align: middle;
+	width: 45%;
+}
+
+.wrapper .form .option h2:before{
+	right: 0.5em;
+    margin-left: -50%;
+}
+
+.wrapper .form .option h2:after{
+	left: 0.5em;
+    margin-right: -50%;
+}
+
+.wrapper .form .option-social{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.fb-btn, .google-btn{
+	font-size: 18px;
+    padding: 15px;
+    border-radius: 10px;
+    width: calc((100% - 20px) / 2);
+    box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+    border: none;
+	margin: 20px auto;
+	height: 70px;
+	
+}
+
+.fb-btn{
+	color: #fff;
+    background-color: #3b5998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .fb-btn .facebook-icon{
+	margin-right: 10px;
+    font-size: 25px;
+}
+
+.form .google-btn{
+	color: #555555;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .form .google-btn img{
+	width: 30px;
+    padding-top: 5px;
+    margin-right: 10px;
+    padding-bottom: 3px;
+    display: flex;
+}
+
+.wrapper .form .google-btn:hover{
+	background-color: saddlebrown;
+    color: #ffffff;
+}
+
+.wrapper .form .fb-btn:hover{
+	background-color: saddlebrown;
+    color: #ffffff;
+}
+
+
+@media only screen and (max-width: 800px){
+	.wrapper{
+		width: 90vw;	
+	}
+	.center{
+        padding: 10px;
+    }
+}
+
+@media (max-width: 500px){
+	.wrapper .form .option-social{
+		display: inherit;
+	}
+	.wrapper .form .fb-btn, .google-btn{
+		width: 100%;
+	}	
+}
+
+@media (max-width: 420px){
+    .wrapper .form .genderDiv{
+	   display: inline;	
+    }
+    
+    .wrapper .form .input_field{
+	   flex-direction: column;
+	   align-items: flex-start;
+    }
+    
+    .wrapper .form .input_field label{
+	   margin-bottom: 5px;
+    }
+    
+    .wrapper .form .input_field .radio1{
+	   position: relative;
+	   left: 130px;
+    }
+}
+
+@media (max-width: 370px){
+    .wrapper .title{
+        font-size: 20px;
+    }
+    .wrapper .form .input_field .radio1{
+        left: 100px;
+    }
+    .wrapper .title{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 310px){
+	.wrapper .title{
+		font-size: 17px;
+	}
+	.wrapper .form .input_field .radio1{
+		left: 98px;
+	}
+
+}
+
+@media (max-width: 280px){
+	.wrapper .title{
+	   font-size: 15px;
+	}
+    
+	.wrapper .form .input_field .radio1{
+	   left: 90px;
+	}
+    
+	.wrapper{
+		max-width: 105%;
+	}
+}

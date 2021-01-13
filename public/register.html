@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				
+				<!-- Collapsible Button -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-navbar">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>   
+				</button>
+				
+				<!-- Name of the Site -->
+				<a class="navbar-brand" href="#">Lost and Found</a>
+			</div>
+			
+			<!-- Navigation Links -->
+			<div class="collapse navbar-collapse" id="collapsible-navbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="login-form.html">Log in</a></li>
+					<li><a href="register.html">Register</a></li>
+				</ul>
+			</div> 
+		</div>
+	</nav>
+
+	<!-- Button trigger modal -->
+	<button type="button" id="modalShow" style="display: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+	</button>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header"></div>
+				<div class="modal-body">
+					<i class="fa fa-check-circle"></i><br>
+					<h4 id="messageShow">You have successfully created your account!</h4>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div class="title">Registration Form</div>
+		<form class="form" id="regiForm">
+			<div class="input_field">
+				<label>First Name</label>
+				<input class="input" type="text" placeholder="First Name" id="fName" required>
+			</div>
+			
+			<div class="input_field">
+				<label>Last Name</label>
+				<input class="input" type="text" placeholder="Last Name" id="lName" required>
+			</div>
+			<div class="input_field">
+				<label>Birthday</label>
+				<input class="input" type="date" id="birthdate" required>
+			</div>	
+			<div class="input_field">
+				<label>Address</label>
+				<textarea class="textarea" placeholder="Address" id="address" required></textarea>
+			</div>
+			<div class="input_field">
+				<label>Email Address</label>
+				<input class="input" type="text" name="email" placeholder="Email" id="email" required>
+			</div>
+			<div class="input_field">
+				<label>Phone Number</label>
+				<input class="input" type="tel" placeholder="Phone Number" id="phoneNo" maxlength="16" required>
+			</div>
+			<div class="input_field" id="pass">
+				<label>Password</label>
+				<input class="input" type="password" placeholder="Enter Password" id="password1" required>			
+			</div>
+			<div class="input_field" id="pass">
+				<label>Re-type Password</label>
+				<input class="input" type="password" placeholder="Confirm Password" id="password2" required>
+			</div>
+			<span id="passMsg" style="display: none;">Password must be the same</span>
+			<div class="input_field" id="gender_id">
+				<label class="gender_label"><b>Gender</b></label>
+				<div class="radio1">
+					<input class="gender" type="radio" name="gender" value="male" checked="checked">
+					<span>Male</span>
+					<input class="gender" type="radio" name="gender" value="female">
+					<span>Female</span>
+				</div>
+			</div>
+			<div class="input_field">
+				<input type="submit" value="SUBMIT" class="btn">
+			</div>
+			<div class="option">
+                <h2><span>OR</span></h2>
+            </div>
+            <div class="option-social">
+				<button type="button" class="fb-btn" onclick="googleSignIne()"><i class="facebook-icon fa fa-facebook-official"></i>
+				Sign up with Facebook</button>
+				<button type="button" class="google-btn" onclick="facebookSignIne()"><img src="images/icon-google.png" alt="GOOGLE">Sign up with Google</button>
+            </div>
+		</form>
+	</div>
+	<!--------------------------FIRBASE LIBRARIES-------------------------------------------------->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+
+	<!----> <script src="./js/config.js"></script>
+			<script src="./js/register.js"></script>
+</body>
+</html>
