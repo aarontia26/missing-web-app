@@ -2,7 +2,7 @@
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
-
+const store = firebase.storage();
 // get document element 
 const fName = document.getElementById('fName')
 const lName = document.getElementById('lName')
@@ -192,7 +192,7 @@ auth.onAuthStateChanged((userAccount) =>{
             //const modalYes = document.querySelector('.btn btn-primary')
             btn.addEventListener('click', ()=>{      
                 if(files){
-                    var uploadTask = store.ref('Images/'+userAccount.uid).put(files[0])
+                    var uploadTask = store.ref('Images/'+userAccount.uid+"/"+userAccount.uid).put(files[0])
                     uploadTask.on('state_changed', function(){
                          
                     },
@@ -411,8 +411,7 @@ auth.onAuthStateChanged((userAccount) =>{
 
 
 const logout = document.querySelector('#logout');
-logout.addEventListener('click', (e) => {
-    e.preventDefault();
+logout.addEventListener('click', () => {
     auth.signOut().then(() => {
         window.location.assign('./login-form.html');
         localStorage.clear();

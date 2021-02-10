@@ -1,0 +1,839 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MODAL */
+.modal-content{
+    background-color: rgb(255, 255, 255);
+}
+.modal-header{
+    border-bottom: 3px solid #000000;
+}
+.modal-body{
+    padding-bottom: 0;
+    text-align: center;
+}
+.modal-body i{
+	font-size: 40px;
+}
+.modal-header, .modal-body h4{
+    color: black;
+}
+.modal-footer{
+    border-top: none;
+}
+.modal-footer .btn{
+    background-color: #4a4a4a;
+    color: white;
+}
+
+.navbar {
+    background-color: rgb(153, 102, 51);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-brand  {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+.navbar-brand:hover {
+    color: #ffffff !important;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+}
+
+.navbar-default .navbar-nav li a{
+    color: #D5D5D5;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 1100px) {
+    .navbar-header {
+        float: none;
+    }
+    
+    .navbar-toggle {
+        display: block;
+    }
+    
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    
+    .navbar-nav>li {
+        float: none;
+    }
+    
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+/*-------------FIRST REPORT FORM---------------*/
+.grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "firstform";
+}
+
+
+
+.title {
+    grid-area: title;
+}
+
+
+
+.list {
+    grid-area: list;
+}
+
+.height {
+    grid-area: height;
+}
+
+
+.eyes {
+    grid-area: eyes;
+}
+
+
+
+.hair {
+    grid-area: hair;
+}
+
+
+.complexion {
+    grid-area: complexion;
+}
+
+
+
+.gender {
+    grid-area: gender;
+}
+
+.clothing {
+    grid-area: clothing;
+}
+
+.place {
+    grid-area: place;
+}
+
+.date {
+    grid-area: date;
+}
+
+.info {
+    grid-area: addinfo;
+}
+
+.report {
+    grid-area: report;
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 320px 320px 1fr;
+        grid-template-areas: 
+        ". firstform firstform .";
+    }
+
+    .first {
+        grid-area: firstform;
+        display: grid;
+        grid-template-columns: 1fr 320px 320px 1fr;
+         grid-template-areas: 
+        ". title title ."
+        ". list list ."
+        ". height eyes ."
+        ". hair complexion ."
+        ". gender gender ."
+        ". clothing clothing ."
+        ". place place ."
+        ". date date ."
+        ". addinfo addinfo ."
+        ". report report .";
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        margin: 80px 0;
+    }
+}
+textarea {
+    overflow: hidden;
+    height: auto;
+    resize: none;
+    overflow-y: scroll;
+}
+
+/*--------------SECOND REPORT FORM-----------------*/
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "secondform"
+    "thirdform";
+    grid-column-gap: 50px;
+}
+
+.second {
+    grid-area: secondform;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin: 80px 0;
+}
+
+.second .data input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.second .title {
+    background-color: rgb(153, 102, 51);
+    padding: 10px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.second .title h3 {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 3.5vmin;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.second .data {
+    padding: 0 20px;
+    margin: 8px 0;
+}
+
+.second .data input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.second input:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.second .data textarea {
+    width: 100%;
+    height: 270px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.second textarea:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.second .data select {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.second .data option {
+    width: 100%;
+}
+
+.second .data select:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.second .list {
+    margin-top: 25px;
+}
+
+.second #reportBtn {
+    width: 100%;
+    background-color: rgb(153, 102, 51);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 24px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.second #reportBtn:hover{
+    background-color: saddlebrown;
+    outline: none;
+}
+
+.second .name {
+    margin-top: 35px !important;
+}
+
+.second .data label {
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------THIRD REPORT HISTORY FORM--------------*/
+.third {
+    grid-area: thirdform;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "title"
+    "image"
+    "status"
+    "name"
+    "address"
+    "age"
+    "gender"
+    "height"
+    "complexion"
+    "eyes"
+    "hair"
+    "clothing"
+    "place"
+    "date"
+    "contactnum"
+    "contactperson"
+    "addinfo";
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin: 80px 0;
+}
+
+.name {
+    grid-area: name;
+}
+
+.image {
+    grid-area: image;
+}
+
+.age {
+    grid-area: age;
+}
+
+.address {
+    grid-area: address;
+}
+
+.person {
+    grid-area: contactperson;
+}
+
+.number {
+    grid-area: contactnum;
+}
+
+.status {
+    grid-area: status;
+}
+
+.label {
+    grid-area: reportnum;
+}
+
+.third .data input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.third .image {
+    text-align: center;
+}
+
+.third .image img {
+    border: 2px solid gray;
+    margin: 15px 0;
+}
+
+.third .image label {
+    margin-top: 15px;
+}
+
+.third .image input {
+    width: 40px !important;
+    height: 5px !important;
+    border: 2px solid black !important;
+}
+
+.third .title {
+    background-color: rgb(153, 102, 51);
+    padding: 10px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.third .title h3 {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 3.5vmin;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.third .data {
+    padding: 0 20px;
+    margin: 8px 0;
+}
+
+.third .data input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.third input:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.third .data textarea {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.third textarea:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.third .data select {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.third .data option {
+    width: 100%;
+}
+
+.third .data select:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.third .list {
+    margin-top: 25px;
+}
+
+.third #reportBtn {
+    width: 100%;
+    background-color: rgb(153, 102, 51);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 24px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.third #reportBtn:hover{
+    background-color: saddlebrown;
+    outline: none;
+}
+
+.third .data label {
+    font-size: 16px;
+}
+
+.third .name, .third .person {
+    margin-left: -10px !important;
+}
+
+.third .status, .third .number {
+    margin-right: -10px !important;
+}
+
+.third .age, .third .complexion {
+    margin-right: -10px !important;
+}
+
+.third .gender, .third .eyes {
+    margin-left: -10px !important;
+    margin-right: -10px !important;;
+}
+
+.third .height, .third .hair {
+    margin-left: -10px !important;
+}
+
+.third #reportedNum {
+    width: 50px !important;
+    text-align: center;
+}
+
+.action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -50px;
+    margin-right: 7.5%;
+}
+
+.action #nextBtn {
+    background-color: rgb(153, 102, 51);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 35px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.action #nextBtn:hover{
+    background-color: saddlebrown;
+    outline: none;
+}
+
+.action #previousBtn {
+    background-color: rgb(153, 102, 51);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.action #previousBtn:hover{
+    background-color: saddlebrown;
+    outline: none;
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: 35% auto;
+        grid-template-areas: 
+        "secondform thirdform";
+        grid-column-gap: 50px;
+    }
+
+   .third {
+        grid-area: thirdform;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-areas:
+        "title title title"
+        "image image image"
+        "status name name"
+        "address address address"
+        "age gender height"
+        "complexion eyes hair"
+        "clothing clothing clothing"
+        "place place place"
+        "date date date"
+        "contactnum contactperson contactperson"
+        "addinfo addinfo addinfo";
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        margin: 80px 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .second {
+        margin: 10% auto;
+        width: 85vw;
+    }
+    
+    .third {
+        margin: 1% auto;
+        width: 85vw;
+    }
+    
+   .third .title h3, .second .title h3 {
+        font-size: 18px;
+    }
+    
+    .third .status, .third .age, .third .complexion, .third .number {
+        margin-right: 0 !important;
+    }
+    
+    .third .name, .third .height, .third .hair, .third .person {
+        margin-left: 0 !important;
+    }
+    
+    .third .gender, .third .eyes {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5% auto;
+        width: 100%;
+    }
+    
+    .action #nextBtn {
+        width: 100%;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .action {
+        margin: 5% auto;
+    }
+} 
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: rgb(153, 102, 51);
+    color: #ffffff;
+    grid-template-areas: 
+    "main"
+    "hotline"
+    "contact"
+    "copyright";
+    margin-top: 50px;
+    padding: 30px 30px 0 30px;
+    grid-column-gap: 40px;
+}
+
+.main-content {
+    grid-area: main;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.main-content h2 {
+    border: 2px solid black;
+    text-align: center;
+    width: fit-content;
+    padding: 5px;
+    margin-top: -4px;
+    letter-spacing: 2px;
+}
+
+.main-content p {
+    font-size: 2.5vmin;
+}
+
+.hotline-numbers {
+    grid-area: hotline;
+}
+
+.hotline-numbers h4 {
+    margin-bottom: 25px;
+    font-size: 3vmin;
+}
+
+.hotline-numbers p {
+    font-size: 2.5vmin; 
+}
+
+.hotline-numbers .first-hotline h4 {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hotline-numbers .second-hotline h4 {
+    margin-top: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.contact h4 {
+    margin-bottom: 20px;
+    font-size: 3vmin;
+}
+
+.contact p {
+    font-size: 2.5vmin;
+}
+
+.contact .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.copyright {
+    grid-area: copyright;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0 0 0;
+    border-top: 1px solid burlywood;
+}
+
+.copyright p {
+    font-size: 2.5vmin;
+}
+
+@media only screen and (min-width: 1200px){
+    .footer-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: rgb(153, 102, 51);
+        color: #ffffff;
+        grid-template-areas: 
+        "main hotline contact"
+        "main hotline contact"
+        "copyright copyright copyright";
+        margin-top: 40px;
+        padding: 40px 40px 0 40px;
+        grid-column-gap: 40px;
+    }
+}
+    
+@media only screen and (max-width: 600px){ 
+    .main-content p {
+        font-size: 3.5vmin;
+    }
+    
+    .main-content h2 {
+        font-size: 20px;
+    }
+    
+    .hotline-numbers p, .hotline-numbers h4 {
+       font-size: 3.5vmin; 
+    }
+    
+    .contact p, .contact h4 {
+        font-size: 3.5vmin;
+    }
+    
+    .copyright p {
+        font-size: 3.5vmin;
+    }
+    
+    .hotline, .contact {
+        border-top: 1px solid burlywood;
+        margin-top: 10px;
+    }
+}
+
+
+.topBtn {
+    position: fixed;
+    color: rgb(0,0,0,0.8) !important;
+    text-decoration: none !important;
+    bottom: 10px;
+    right: 20px;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid saddlebrown;
+}
+
+.topBtn:hover {
+    background-color: saddlebrown;
+}
+
+.topBtn.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}

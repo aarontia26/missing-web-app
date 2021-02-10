@@ -42,7 +42,6 @@ document.addEventListener('scroll',()=>{
         sticky1.style.opacity = "0";
         if(sticky2Scroll>part2Bottom){
             sticky2.style.opacity = "0";
-            console.log(stick3, scroll_position, "3")
             if(scroll_position>stick3){
                 sticky3.style.transition = ".5s"
                 sticky3.style.margin= "0 30px"
@@ -74,8 +73,7 @@ document.addEventListener('scroll',()=>{
         sticky1.style.position = "sticky";
         sticky2.style.margin = "0"  
         
-        console.log(stick1, scroll_position)
-        console.log(stick2, scroll_position, "s2")
+
         if(scroll_position>stick1){
             sticky1.style.transition = ".5s"
             sticky1.style.margin= "0 30px"

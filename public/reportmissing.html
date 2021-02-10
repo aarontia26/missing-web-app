@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/reportmissing-style.css">
+        
+        <meta name="description" content="Report Missing Page">
+        <title>Report Missing</title>
+    
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-default navbar-expand-md" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    
+                    <!-- Collapsible Button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-navbar">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <!-- Name of the Site -->
+                    <a class="navbar-brand" href="index.html">Lost and Found</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="collapsible-navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="familymember.html">Family Members</a></li>
+                        <li><a href="reportmissing.html">Report Missing</a></li>
+                        <li><a href="bulletinboard.html">Bulletin Board</a></li>
+                        <li><a href="#" id="logout">Logout</a></li>
+                    </ul>
+                </div> 
+            </div>
+        </nav>
+
+        <!-- Button trigger modal -->
+        <button type="button" id="modalShow" style="display: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"></button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLongTitle">Message</h>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <i id="icon" ></i>
+                        <h4 id="messageShow"></h4>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <form class="second" id="reportMissingForm">
+                <div class="title">
+                    <h3>Report Missing</h3>
+                </div>
+                <div class="data list">
+                    <label>Person you want to Report</label>
+                    <select id="familyMembers">
+                        
+                    </select>
+                </div>
+                <div class="data height">
+                    <label>Height</label>
+                    <input id="missingHeight" type="text" placeholder="Enter height" required>
+                </div>
+                <div class="data eyes">
+                    <label>Eyes</label>
+                    <input id="missingEyes" type="text" placeholder="Enter eye color" required>
+                </div>
+                <div class="data hair">
+                    <label>Hair</label>
+                    <input id="missingHair" type="text" placeholder="Enter hair color" required>
+                </div>
+                <div class="data complexion">
+                    <label>Complexion</label>
+                    <input id="missingComplexion" type="text" placeholder="Enter complexion" required>
+                </div>
+                <div class="data gender">
+                    <label>Gender</label>
+                    <input id="missingGender" type="text" placeholder="Enter gender" required>
+                </div>
+                <div class="data clothing">
+                    <label>Last Outfit</label>
+                    <input id="missingLastOutfit" type="text" placeholder="Enter the last seen outfit and its type" required>
+                </div>
+                <div class="data place">
+                    <label>Last Seen Place</label>
+                    <input id="missingLastSeenPlace" type="text" placeholder="Enter the last seen place" required>
+                </div>
+                <div class="data date">
+                    <label>Last Seen Date</label>
+                    <input id="missingLastSeenDate" type="date" required>
+                </div>
+                <div class="data info">
+                    <label>Additional Information</label>
+                    <br>
+                    <textarea id="missingAdditionalInfo" type="text" placeholder="Enter additional information of the missing person"></textarea>
+                </div>
+                <div class="data report">
+                    <button id="reportBtn" type="submit">Report</button>
+                </div>
+            </form>
+            
+            <form class="third">
+                <div class="title">
+                    <h3>Report History</h3>
+                </div>
+                <div class="data image">
+                    <img id="reportedImg" src="images/no-img.jpg" width="200" height="200">
+                    <br>
+                    <label>Report History Number :</label>
+                    <input id="reportedNum" type="text" readonly>
+                </div>
+                <div class="data status">
+                    <label>Report Status</label>
+                    <input id="reportedStatus" type="text" readonly>
+                </div>
+                <div class="data name">
+                    <label>Name</label>
+                    <input id="reportedName" type="text" readonly>
+                </div>
+                <div class="data age">
+                    <label>Age</label>
+                    <input id="reportedAge" type="text" readonly>
+                </div>
+                <div class="data gender">
+                    <label>Gender</label>
+                    <input id="reportedGender" type="text" readonly>
+                </div>
+                <div class="data address">
+                    <label>Address</label>
+                    <input id="reportedAddress" type="text" readonly>
+                </div>
+                <div class="data height">
+                    <label>Height</label>
+                    <input id="reportedHeight" type="text" readonly>
+                </div>
+                <div class="data eyes">
+                    <label>Eyes</label>
+                    <input id="reportedEyes" type="text" readonly>
+                </div>
+                <div class="data hair">
+                    <label>Hair</label>
+                    <input id="reportedHair" type="text" readonly>
+                </div>
+                <div class="data complexion">
+                    <label>Complexion</label>
+                    <input id="reportedComplexion" type="text" readonly>
+                </div>
+                <div class="data clothing">
+                    <label>Last Outfit</label>
+                    <input id="reportedLastOutfit" type="text" readonly>
+                </div>
+                <div class="data place">
+                    <label>Last Seen Place</label>
+                    <input id="reportedLastSeenPlace" type="text" readonly>
+                </div>
+                <div class="data date">
+                    <label>Last Seen Date</label>
+                    <input id="reportedLastSeenDate" type="date" readonly>
+                </div>
+                <div class="data number">
+                    <label>Contact Number</label>
+                    <input id="reportedContactNo" type="text" readonly>
+                </div>
+                <div class="data person">
+                    <label>Contact Person</label>
+                    <input id="reportedContactPerson" type="text" readonly>
+                </div>
+                <div class="data info">
+                    <label>Additional Information</label>
+                    <br>
+                    <textarea id="reportedAdditionalInfo" type="text" readonly></textarea>
+                </div>
+                    
+            </form>
+        </div>
+        
+        <div class="action">
+            <div class="data previous">
+                <button id="previousBtn" type="button">Previous</button>
+            </div>
+            <div class="data next">
+                <button id="nextBtn" type="button">Next</button>
+            </div>
+        </div>
+        
+        <a href="#" class="topBtn"><i class="fa fa-arrow-up"></i></a>
+        
+         <footer class="footer-grid">
+            <div class="main-content">
+                <h2>Lost and Found</h2>
+                <p>Growing numbers of cases about a missing person, especially after the typhoons and flooding that we are all experiencing, numerous cases cannot solve because of lack of information to communicate with the family of the missing person. This web application will lessen those public issues about missing persons that turn into leftover cases. In this web application you can register all your family member, browse to the cases of missing person that was posted to the bulletin board of the web app and if you have information about the location of the missing person, you can directly communicate to the family member of the person by the information corresponds to the posted missing person.</p>
+            </div>
+            
+            <div class="hotline">
+                <div class="hotline-numbers">
+                    <h4>Emergency Hotline Numbers</h4>
+                    <div class="first-hotline">
+                        <h4>DSWD</h4>
+                        <p>Department of Social Welfare & Development</p>
+                        <p>(02) 856-3665;(02) 852-8081</p>
+                    </div>
+                    <div class="second-hotline">
+                        <h4>PNP</h4>
+                        <p>Philippine National Police</p>
+                        <p><span>117 or send TXT PNP to 2920</span></p>
+                        <p>(02) 723-6983</p>
+                        <p>(0917) 847-5757 (Text Hotline)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h4>Contact Us</h4>
+                <p><i class="fa fa-phone icon"></i>0908-930-4950</p>
+                <p><i class="fa fa-envelope icon"></i>lostandfound@gmail.com</p>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2021 Copyright: Lost and Found Web App</p>
+            </div>
+        </footer>
+
+        <!--------------------------FIRBASE LIBRARIES-------------------------------------------------->
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script> 
+        <script src="js/config.js"></script>
+        <script src="js/report.js"></script>
+        
+    </body>
+</html>

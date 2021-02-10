@@ -12,10 +12,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/profile-style.css">
+        <link rel="stylesheet" type="text/css" href="css/familymember-style.css">
         
-        <meta name="description" content="Profile Page">
-        <title>Your Profile</title>
+        <meta name="description" content="Family Members Page">
+        <title>Family Member</title>
     
     </head>
     
@@ -48,87 +48,106 @@
                 </div> 
             </div>
         </nav>
-
+        
         <!-- Button trigger modal -->
-<button type="button" id="modalShow" style="display: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  </button>
+        <button type="button" id="modalShow" style="display: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"></button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLongTitle">Message</h>
-          
-        </div>
-        <div class="modal-body">
-            <i id="icon" ></i>
-            <h4 id="messageShow"></h4>
-        </div>
-        <div class="modal-footer">
-            
-            <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-        <div class="grid-container">
-            <div class="grid-title">
-                <h3>Your Profile</h3>
-                <h4>Edit your name, avatar etc.</h4>
-                <button type="button" class="discardbtn" style="display: none;" id="discardButton">Discard Changes</button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLongTitle">Message</h>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <i id="icon" ></i>
+                        <h4 id="messageShow"></h4>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
-                <div class="grid-avatar">
-                    <img id="profileImg" width="200px" height="200px">
-                    <input type="file" id="uploadButtonFile" style="display: none;" accept="image/png, image/jpg, image/jpeg">
-                    <button id="uploadButton" style="display: none;">Upload</button>
+        </div>
+            
+        <div class="container">
+            <form class="second" id="addForm">
+                <div class="title">
+                    <h3>Add your Family Member</h3>
                 </div>
-            <form class="main" id="profileForm">
-                <div class="data grid-firstname">
-                    <label class="">First Name</label>
-                    <input type="text" id="fName" name="inputs" readonly>
+                <div class="data image">
+                    <img id="addImg" src="images/no-img.jpg" width="200" height="200">
+                    <br>
+                    <input type="file" id="addUploadFile" style="display: none;" accept="image/png, image/jpg, image/jpeg">
+                    <button id="addUpload" type="button">Upload</button>
                 </div>
-                <div class="data grid-lastname">
-                    <label class="">Last Name</label>
-                    <input type="text" id="lName" name="inputs" readonly>
+                <div class="data name">
+                    <label>Name</label>
+                    <input id="addName" type="text" placeholder="Name" required>
                 </div>
-                <div class="data grid-gender">
-                    <label class="">Gender</label>
-                    <input type="text" id="gender" name="inputs" readonly>
+                <div class="data age">
+                    <label>Age</label>
+                    <input id="addAge" type="number" placeholder="Age" required>
                 </div>
-                <div class="data grid-birthday">
-                    <label class="">Birthday</label>
-                    <input type="date" id="birthdate" name="inputs" readonly>
+                <div class="data number">
+                    <label>Contact Number</label>
+                    <input type="tel" id="addContactNo" name="phone" placeholder="Contact No" maxlength="15" required>
                 </div>
-                <div class="data grid-address">
-                    <label class="">Address</label>
-                    <textarea type="text" id="address" name="inputs" readonly></textarea>
+                <div class="data address">
+                    <label>Address</label>
+                    <textarea type="text" id="addAddress" name="inputs" required placeholder="Address"></textarea>
                 </div>
-                <div class="data grid-phonenum">
-                    <label class="">Phone Number</label>
-                    <input type="tel" id="phoneNo" name="phone" maxlength="16" readonly>
+                <div class="data save">
+                    <button id="addSubmit" type="submit">Add</button>
                 </div>
-                <div class="data grid-emailad">
-                    <label class="">Email Address</label>
-                    <i id="verifyIcon"></i>
-                    <span id="verifyCheck"></span>
-                    <input type="email" id="email" readonly>
-                    <a href="#" id="verifySend"></a>
+            </form>
+            <div class="third">
+                <div class="membersTab">
+                    <div class="title">
+                        <h3>List of Family Members</h3>
+                    </div>
+                    <div class="data image" id="data_image">
+                        <img id="updateImg" src="images/no-img.jpg" width="200" height="200">
+                        <br>
+                        <input type="file" id="updateUploadFile" style="display: none;" accept="image/png, image/jpg, image/jpeg">
+                        <button id="updateUpload" style="display: none;">Upload</button>
+                    </div>
+                    <form id="updateForm">
+                        <div class="data name">
+                            <label>Name</label>
+                            <input id="updateName" type="text" placeholder="Name" required readonly>
+                        </div>
+                        <div class="data age">
+                            <label>Age</label>
+                            <input id="updateAge" type="number" placeholder="Age" required readonly>
+                        </div>
+                        <div class="data number">
+                            <label>Contact Number</label>
+                            <input type="tel" id="updateContactNo" name="phone" placeholder="Contact No" maxlength="15" required readonly>
+                        </div>
+                        <div class="data address">
+                            <label>Address</label>
+                            <textarea type="text" id="updateAddress" name="inputs" required placeholder="Address" readonly></textarea>
+                        </div>
+                        <div class="data update" id="updateSave">
+                            <button id="updateSubmit" type="button">Update</button>
+                            <button type="submit" id="saveButton" hidden>Save</button>
+                        </div>
+                    </form>
                 </div>
-                
-                <!--
-
-                -->
-                <div class="data grid-pass" id="passwordDiv">
-                    <label class="">Password</label>
-                    <input type="password" id="password" readonly>
-                </div>
-                <div class="data grid-save">
-                    <button type="button" id="updateButton">Update Profile</button>
-                    <button type="submit" id="saveButton" hidden>Save Changes</button> 
-                </div>
-            </form>          
+            </div>
+            
+        </div>
+        
+        <div class="action">
+            <div class="data previous">
+                <button id="previousBtn" type="button">Previous</button>
+            </div>
+            <div class="data next">
+                <button id="nextBtn" type="button">Next</button>
+            </div>
         </div>
         
         <footer class="footer-grid">
@@ -172,7 +191,6 @@
         <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script> 
 
         <script src="./js/config.js"></script>
-        <script src="./js/profile.js"></script>
+        <script src="./js/family.js"></script>
     </body>
-
 </html>

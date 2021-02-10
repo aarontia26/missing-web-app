@@ -15,7 +15,7 @@ var firebaseConfig = {
   // make auth and firestore references
   const auth = firebase.auth();
   const db = firebase.firestore();
-  const store = firebase.storage();
+  
   //update firestore settings
   db.settings({ timestampsInSnapshots: true});
   

@@ -1,0 +1,298 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* MODAL */
+.modal-content{
+    background-color: rgb(255, 255, 255);
+}
+.modal-header{
+    border-bottom: 3px solid #000000;
+}
+.modal-body{
+    padding-bottom: 0;
+}
+.modal-body i{
+	font-size: 40px;
+}
+.modal-header, .modal-body h4{
+    color: black;
+}
+.modal-footer{
+    border-top: none;
+}
+.modal-footer .btn{
+    background-color: #4a4a4a;
+    color: white;
+}
+/* NAVBAR */
+.navbar {
+    background-color: rgb(153, 102, 51);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-brand  {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+.navbar-brand:hover {
+    color: #ffffff !important;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+}
+
+.navbar-default .navbar-nav li a{
+    color: #D5D5D5;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #ffffff;
+}
+
+/* MODAL */
+.modal-content{
+    background-color: rgb(255, 255, 255);
+}
+.modal-header{
+    border-bottom: 3px solid #000000;
+}
+.modal-body{
+    padding-bottom: 0;
+    text-align: center;
+}
+.modal-body i{
+	font-size: 40px;
+}
+.modal-header, .modal-body h4{
+    color: black;
+}
+.modal-footer{
+    border-top: none;
+}
+.modal-footer .btn{
+    background-color: #4a4a4a;
+    color: white;
+}
+
+/* BODY */
+.container_{
+    width: 100%;
+    padding: 20px 20px 0 20px;
+    position: relative;
+}
+.box1{
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+    border-color: red;
+}
+.box2{
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+    border-color: blue;
+}
+.img-container{
+    border-style: solid;
+    border-color: black;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+.box2_inside{
+    display: none;
+}
+#updateUpload{
+    display: none;
+}
+
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .modal{
+        top: 10%;
+    }
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: rgb(153, 102, 51);
+    color: #ffffff;
+    grid-template-areas: 
+    "main"
+    "hotline"
+    "contact"
+    "copyright";
+    margin-top: 50px;
+    padding: 30px 30px 0 30px;
+    grid-column-gap: 40px;
+}
+
+.main-content {
+    grid-area: main;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.main-content h2 {
+    border: 2px solid black;
+    text-align: center;
+    width: fit-content;
+    padding: 5px;
+    margin-top: -4px;
+    letter-spacing: 2px;
+}
+
+.main-content p {
+    font-size: 2.5vmin;
+}
+
+.hotline-numbers {
+    grid-area: hotline;
+}
+
+.hotline-numbers h4 {
+    margin-bottom: 25px;
+    font-size: 3vmin;
+}
+
+.hotline-numbers p {
+    font-size: 2.5vmin; 
+}
+
+.hotline-numbers .first-hotline h4 {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hotline-numbers .second-hotline h4 {
+    margin-top: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.contact h4 {
+    margin-bottom: 20px;
+    font-size: 3vmin;
+}
+
+.contact p {
+    font-size: 2.5vmin;
+}
+
+.contact .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.copyright {
+    grid-area: copyright;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0 0 0;
+    border-top: 1px solid burlywood;
+}
+
+.copyright p {
+    font-size: 2.5vmin;
+}
+
+@media only screen and (min-width: 1200px){
+    .footer-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: rgb(153, 102, 51);
+        color: #ffffff;
+        grid-template-areas: 
+        "main hotline contact"
+        "main hotline contact"
+        "copyright copyright copyright";
+        margin-top: 50px;
+        padding: 40px 40px 0 40px;
+        grid-column-gap: 40px;
+    }
+}
+    
+@media only screen and (max-width: 600px){ 
+    .main-content p {
+        font-size: 3.5vmin;
+    }
+    
+    .main-content h2 {
+        font-size: 20px;
+    }
+    
+    .hotline-numbers p, .hotline-numbers h4 {
+       font-size: 3.5vmin; 
+    }
+    
+    .contact p, .contact h4 {
+        font-size: 3.5vmin;
+    }
+    
+    .copyright p {
+        font-size: 3.5vmin;
+    }
+    
+    .hotline, .contact {
+        border-top: 1px solid burlywood;
+        margin-top: 10px;
+    }
+
+    .modal{
+        top: 10%;
+    }
+}
+

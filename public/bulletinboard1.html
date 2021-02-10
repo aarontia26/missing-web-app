@@ -12,10 +12,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/profile-style.css">
+        <link rel="stylesheet" type="text/css" href="css/bulletinboard-style.css">
         
-        <meta name="description" content="Profile Page">
-        <title>Your Profile</title>
+        <meta name="description" content="Family Members Page">
+        <title>Bulletin Board</title>
     
     </head>
     
@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="collapsible-navbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="profile.html">Profile</a></li>
-                        <li><a href="familymember.html">Family Members</a></li>
+                        <li><a href="familymembers.html">Family Members</a></li>
                         <li><a href="reportmissing.html">Report Missing</a></li>
                         <li><a href="bulletinboard.html">Bulletin Board</a></li>
                         <li><a href="#" id="logout">Logout</a></li>
@@ -51,84 +51,74 @@
 
         <!-- Button trigger modal -->
 <button type="button" id="modalShow" style="display: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  </button>
+</button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLongTitle">Message</h>
-          
-        </div>
-        <div class="modal-body">
-            <i id="icon" ></i>
-            <h4 id="messageShow"></h4>
-        </div>
-        <div class="modal-footer">
-            
-            <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">Close</button>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">PERSON'S INFORMATION</h3>
+        <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+          <i id="icon" ></i>
+          <h4 id="messageShow"></h4>
+      </div>
+      <div class="formHidden" hidden>
+        <h2>HAVE YOU SEEN ME?</h2>
+        <h4>Please kindly fill up this form</h4>
+        <form id="seenForm">
+        <label>Your Name: </label>
+        <input id="nameSeener" type="text" required><br>
+        <label>Your Contact No: </label>
+        <input id="contactNoSeener" type="tel" name="phone" maxlength="15" required><br>
+        <label>Where: </label>
+        <input id="lastSeenSeener" type="text" required><br>
+        <label>When: </label>
+        <input id="lastDateSeener" type="date" required><br>
+        <label>Additional Information: </label>
+        <textarea id="addInfoSeener" type="text" ></textarea><br>
+        <button type="submit" id="submitFind"></button>
+        </form>
+    </div>
+      <div class="modal-footer">
+          <button type="button" class="btn" id="seenButton">HAVE YOU SEEN ME?</button>
+          <button type="button" class="btn" id="seenSubmit">SUBMIT</button>
       </div>
     </div>
   </div>
-
-        <div class="grid-container">
-            <div class="grid-title">
-                <h3>Your Profile</h3>
-                <h4>Edit your name, avatar etc.</h4>
-                <button type="button" class="discardbtn" style="display: none;" id="discardButton">Discard Changes</button>
+</div>
+        
+        <div class="container_">
+            <h2>Bulletin Board</h2>
+            <div class="box">
+                <div class="box_inside">
+                    <div class="img_container" hidden>
+                        <img id="imgReported" src="images/no-img.jpg" alt="" width="200px" height="200px">
+                    </div>
+                    <div class="missingInfo">
+                        <div class="infoHidden" hidden>
+                            <label>Name: </label>
+                            <input id="nameReported" type="text" readonly><br>
+                            <label>Age: </label>
+                            <input id="ageReported" type="number" readonly><br>
+                            <label>Contact No: </label>
+                            <input type="tel" id="phoneNoReported" name="phone" maxlength="16" readonly><br>
+                            <label>Address</label>
+                            <textarea id="addressReported" readonly></textarea><br>
+                            <label>Last Seen at: </label>
+                            <input id="lastSeenReported" type="text" readonly><br>
+                            <label>Last Seen on: </label>
+                            <input id="lastDateReported" type="date" readonly><br>
+                            <label>Last Outfit was: </label>
+                            <input id="lastOutfitReported" type="text" readonly><br>
+                        </div>
+                    </div>            
+                </div>
             </div>
-                <div class="grid-avatar">
-                    <img id="profileImg" width="200px" height="200px">
-                    <input type="file" id="uploadButtonFile" style="display: none;" accept="image/png, image/jpg, image/jpeg">
-                    <button id="uploadButton" style="display: none;">Upload</button>
-                </div>
-            <form class="main" id="profileForm">
-                <div class="data grid-firstname">
-                    <label class="">First Name</label>
-                    <input type="text" id="fName" name="inputs" readonly>
-                </div>
-                <div class="data grid-lastname">
-                    <label class="">Last Name</label>
-                    <input type="text" id="lName" name="inputs" readonly>
-                </div>
-                <div class="data grid-gender">
-                    <label class="">Gender</label>
-                    <input type="text" id="gender" name="inputs" readonly>
-                </div>
-                <div class="data grid-birthday">
-                    <label class="">Birthday</label>
-                    <input type="date" id="birthdate" name="inputs" readonly>
-                </div>
-                <div class="data grid-address">
-                    <label class="">Address</label>
-                    <textarea type="text" id="address" name="inputs" readonly></textarea>
-                </div>
-                <div class="data grid-phonenum">
-                    <label class="">Phone Number</label>
-                    <input type="tel" id="phoneNo" name="phone" maxlength="16" readonly>
-                </div>
-                <div class="data grid-emailad">
-                    <label class="">Email Address</label>
-                    <i id="verifyIcon"></i>
-                    <span id="verifyCheck"></span>
-                    <input type="email" id="email" readonly>
-                    <a href="#" id="verifySend"></a>
-                </div>
-                
-                <!--
-
-                -->
-                <div class="data grid-pass" id="passwordDiv">
-                    <label class="">Password</label>
-                    <input type="password" id="password" readonly>
-                </div>
-                <div class="data grid-save">
-                    <button type="button" id="updateButton">Update Profile</button>
-                    <button type="submit" id="saveButton" hidden>Save Changes</button> 
-                </div>
-            </form>          
         </div>
         
         <footer class="footer-grid">
@@ -172,7 +162,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script> 
 
         <script src="./js/config.js"></script>
-        <script src="./js/profile.js"></script>
+        <script src="./js/bulletinboard.js"></script>
     </body>
 
 </html>

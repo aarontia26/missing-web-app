@@ -1,12 +1,11 @@
 // listen for auth
 auth.onAuthStateChanged((userAccount) =>{
     if(userAccount){
-        console.log('user logged in', userAccount.email);
+        //console.log('user logged in', userAccount.email);
         window.location.assign('./profile.html')   
-    }else{
-        console.log('user logged out');
     }
 })
+
 
 const center = document.getElementById('center')
 const popup = document.getElementById('popup')
@@ -54,7 +53,10 @@ loginForm.addEventListener('submit', (e) => {
         //localStorage.setItem("typeOfAccount", "email");
     },
     function(error){
-        alert('The email & password you’ve entered doesn’t match any account.');
+        icon.setAttribute('class', 'fa fa-times-circle')
+        icon.style.color = "red"
+        messageShow.innerHTML = 'The email & password you’ve entered doesn’t match any account.'
+        modalShow.click()
     });
     
 })

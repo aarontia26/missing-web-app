@@ -1,0 +1,713 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MODAL */
+.modal-content{
+    background-color: rgb(255, 255, 255);
+}
+
+.modal-header{
+    border-bottom: 3px solid rgb(153, 102, 51);
+}
+
+.modal-body{
+    padding-bottom: 0;
+}
+
+.modal-body i{
+	font-size: 40px;
+}
+
+.modal-header, .modal-body h4{
+    color: black;
+}
+
+.modal-footer{
+    border-top: none;
+}
+
+.modal-footer .btn{
+    background-color: #4a4a4a;
+    color: white;
+}
+
+
+
+/* NAVBAR */
+.navbar {
+    background-color: rgb(153, 102, 51);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-brand  {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+.navbar-brand:hover {
+    color: #ffffff !important;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+}
+
+.navbar-default .navbar-nav li a{
+    color: #D5D5D5;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #ffffff;
+}
+
+/* MODAL */
+.modal-content{
+    background-color: rgb(255, 255, 255);
+}
+
+.modal-header{
+    border-bottom: 3px solid #000000;
+    display: flex;
+}
+
+#modalClose{
+    position: absolute;
+    background: none;
+    margin-right: 20px;
+    right: 0;
+    font-size: 20px;
+}
+
+.modal-body{
+    padding-bottom: 0;
+    text-align: justify;
+}
+
+.modal-body i{
+	font-size: 40px;
+}
+
+.modal-header, .modal-body h4{
+    color: black;
+}
+
+/* formHidden */
+.formHidden h2{
+    text-align: center;
+}
+
+.formHidden h4{
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.formHidden label{
+    font-size: 1.7rem;
+}
+
+.formHidden input{
+    width: 80%;
+    padding-left: 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    line-height: 40px;
+}
+
+.formHidden input:focus{
+    border-color: saddlebrown;  
+    line-height: 42px;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.formHidden textarea{
+    width: 80%;
+    font-size: 15px;
+    padding: 0 13px;
+    border-radius: 5px;
+    resize: none;
+    height: 100px;
+}
+
+.formHidden textarea:focus{
+    border-color: saddlebrown;  
+    border-bottom-width: 5px;
+}
+
+#seenForm{
+    margin-left: 18%;
+}
+
+.modal-footer .btn{
+    background-color: rgb(153, 102, 51);
+    color: white;
+    outline: none !important;
+}
+
+.modal-footer .btn:hover {
+    background-color: saddlebrown;
+}
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wrapper{
+    margin: 20px auto;
+    padding: 40px;
+}
+
+.wrapper .title1{
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #000000;
+    text-align: center;
+}
+
+.row {
+    margin-top: 50px;
+}
+
+.container img {
+    display: block;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.title h1{
+    margin-top: 10px;
+    color: #000000;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title p {
+    font-size: 15px;
+    margin-top: 2%;
+}
+
+.img-thumbnail{
+    max-height: 250px;
+}
+
+/* BODY */
+.container{
+    width: 100%;
+    padding: 20px 20px 0 20px;
+    position: relative;
+}
+
+.box{
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+    border-color: red;
+}
+
+
+
+.missingPersonImgDiv{
+    width: fit-content;
+    border-style: solid;
+    margin-bottom: 10px;
+}
+
+.formHidden{
+    border-top: 5px solid black;
+    padding: 0 15px;
+}
+
+#seenSubmit{
+    display: none;
+    margin-left: 15px;
+}
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    #exampleModalCenter {
+        max-height: 70vh;
+        margin: 10% 0;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .modal{
+        top: 10%;
+    }
+}
+
+
+.height {
+    grid-area: height;
+}
+
+.eyes {
+    grid-area: eyes;
+}
+
+.hair {
+    grid-area: hair;
+}
+
+.complexion {
+    grid-area: complexion;
+}
+
+.gender {
+    grid-area: gender;
+}
+
+.clothing {
+    grid-area: clothing;
+}
+
+.place {
+    grid-area: place;
+}
+
+.date {
+    grid-area: date;
+}
+
+.info {
+    grid-area: addinfo;
+}
+
+.name {
+    grid-area: name;
+}
+
+.age {
+    grid-area: age;
+}
+
+.address {
+    grid-area: address;
+}
+
+.person {
+    grid-area: contactperson;
+}
+
+.number {
+    grid-area: contactnum;
+}
+
+.third .data input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.third .data {
+    padding: 0 20px;
+    margin: 10px 0;
+}
+
+.third .data input {
+    width: 100%;
+    height: 35px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.third input:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.third .data textarea {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.third textarea:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.third .data select {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.third .data option {
+    width: 100%;
+}
+
+.third .data select:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.third .data label {
+    font-size: 16px;
+}
+/*
+.third .person {
+    margin-left: -10px !important;
+}
+
+.third .status, .third .number {
+    margin-right: -10px !important;
+}
+
+.third .age, .third .complexion {
+    margin-right: -10px !important;
+}
+
+.third .gender, .third .eyes {
+    margin-left: -10px !important;
+    margin-right: -10px !important;;
+}
+
+.third .height, .third .hair {
+    margin-left: -10px !important;
+}
+*/
+@media only screen and (min-width: 1200px) {
+   .third {
+        grid-area: thirdform;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-areas:
+        "name name name"
+        "address address address"
+        "age gender height"
+        "complexion eyes hair"
+        "clothing clothing clothing"
+        "place place place"
+        "date date date"
+        "contactnum contactperson contactperson"
+        "addinfo addinfo addinfo";
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .third {
+        margin: 1% auto;
+    }
+    
+    .third .status, .third .age, .third .complexion, .third .number {
+        margin-right: 0 !important;
+    }
+    
+    .third .height, .third .hair, .third .person {
+        margin-left: 0 !important;
+    }
+    
+    .third .gender, .third .eyes {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+.name {
+    grid-area: name;
+}
+
+.contactnum {
+    grid-area: contactnum;
+}
+
+.place {
+    grid-area: place;
+}
+
+.date {
+    grid-area: date;
+}
+
+.addinfo {
+    grid-area: addinfo;
+}
+
+.second .data input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.second .data {
+    padding: 0 20px;
+    margin: 10px 0;
+}
+
+.second .data input {
+    width: 100%;
+    height: 35px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.second input:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.second .data textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.second textarea:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.second .data select {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.second .data option {
+    width: 100%;
+}
+
+.second .data select:focus {
+    border-color: saddlebrown;
+    border-bottom-width: 5px;
+    outline: none;
+}
+
+.second .data label {
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 1200px) {
+   .second {
+        grid-area: thirdform;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas:
+        "name"
+        "contactnum"
+        "place"
+        "date"
+        "addinfo";
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .second {
+        margin: 1% auto;
+    }
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: rgb(153, 102, 51);
+    color: #ffffff;
+    grid-template-areas: 
+    "main"
+    "hotline"
+    "contact"
+    "copyright";
+    margin-top: 50px;
+    padding: 30px 30px 0 30px;
+    grid-column-gap: 40px;
+}
+
+.main-content {
+    grid-area: main;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.main-content h2 {
+    border: 2px solid black;
+    text-align: center;
+    width: fit-content;
+    padding: 5px;
+    margin-top: -4px;
+    letter-spacing: 2px;
+}
+
+.main-content p {
+    font-size: 2.5vmin;
+}
+
+.hotline-numbers {
+    grid-area: hotline;
+}
+
+.hotline-numbers h4 {
+    margin-bottom: 25px;
+    font-size: 3vmin;
+}
+
+.hotline-numbers p {
+    font-size: 2.5vmin; 
+}
+
+.hotline-numbers .first-hotline h4 {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hotline-numbers .second-hotline h4 {
+    margin-top: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.contact h4 {
+    margin-bottom: 20px;
+    font-size: 3vmin;
+}
+
+.contact p {
+    font-size: 2.5vmin;
+}
+
+.contact .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.copyright {
+    grid-area: copyright;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0 0 0;
+    border-top: 1px solid burlywood;
+}
+
+.copyright p {
+    font-size: 2.5vmin;
+}
+
+@media only screen and (min-width: 1200px){
+    .footer-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: rgb(153, 102, 51);
+        color: #ffffff;
+        grid-template-areas: 
+        "main hotline contact"
+        "main hotline contact"
+        "copyright copyright copyright";
+        margin-top: 50px;
+        padding: 40px 40px 0 40px;
+        grid-column-gap: 40px;
+    }
+}
+    
+@media only screen and (max-width: 600px){ 
+    .main-content p {
+        font-size: 3.5vmin;
+    }
+    
+    .main-content h2 {
+        font-size: 20px;
+    }
+    
+    .hotline-numbers p, .hotline-numbers h4 {
+       font-size: 3.5vmin; 
+    }
+    
+    .contact p, .contact h4 {
+        font-size: 3.5vmin;
+    }
+    
+    .copyright p {
+        font-size: 3.5vmin;
+    }
+    
+    .hotline, .contact {
+        border-top: 1px solid burlywood;
+        margin-top: 10px;
+    }
+
+    .modal{
+        top: 10%;
+    }
+}
+

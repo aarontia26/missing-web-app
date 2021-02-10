@@ -47,6 +47,31 @@ body {
     color: #ffffff;
 }
 
+/* MODAL */
+.modal-content{
+    background-color: rgb(255, 255, 255);
+}
+.modal-header{
+    border-bottom: 3px solid #000000;
+}
+.modal-body{
+    padding-bottom: 0;
+    text-align: center;
+}
+.modal-body i{
+	font-size: 40px;
+}
+.modal-header, .modal-body h4{
+    color: black;
+}
+.modal-footer{
+    border-top: none;
+}
+.modal-footer .btn{
+    background-color: #4a4a4a;
+    color: white;
+}
+
 .center {
     padding: 40px;
 }
@@ -399,5 +424,7 @@ form .option h2:after {
     .container .popup .box button, .container .final button {
         font-size: 15px;
     }
-    
+    .modal{
+        top: 10%;
+    }
 }
