@@ -106,8 +106,11 @@ body {
         padding-bottom: 10px;
     }
 }
-
+input{
+    text-transform: capitalize;
+}
 textarea{
+    text-transform: capitalize;
     width: 100%;
     height: 50px;
     padding: 15px;

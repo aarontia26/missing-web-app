@@ -109,7 +109,9 @@ body {
 .modal-header, .modal-body h4{
     color: black;
 }
-
+input {
+    text-transform: capitalize;
+}
 /* formHidden */
 .formHidden h2{
     text-align: center;

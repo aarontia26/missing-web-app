@@ -209,7 +209,9 @@ textarea {
     resize: none;
     overflow-y: scroll;
 }
-
+input {
+    text-transform: capitalize;
+}
 /*--------------SECOND REPORT FORM-----------------*/
 .container {
     display: grid;

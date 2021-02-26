@@ -65,9 +65,9 @@ auth.onAuthStateChanged((userAccount) =>{
                 div_.querySelector('#reportedLastOutfit').value = missingPersonsArray[missingPersonsNum].missingLastOutfit
                 div_.querySelector('#reportedLastSeenPlace').value = missingPersonsArray[missingPersonsNum].missingLastSeenPlace
                 div_.querySelector('#reportedLastSeenDate').value = missingPersonsArray[missingPersonsNum].missingLastSeenDate
-                div_.querySelector('#reportedAdditionalInfo').value = missingPersonsArray[missingPersonsNum].missingAdditionalInfo
-                div_.querySelector('#reportedContactPerson').value = userRef_.data().firstname + " " + userRef_.data().lastname
-                div_.querySelector('#reportedContactNo').value = userRef_.data().phoneNo
+                div_.querySelector('#reportedAdditionalInfo').value = missingPersonsArray[missingPersonsNum].missingAdditionalInfo.charAt(0).toUpperCase() + missingPersonsArray[missingPersonsNum].missingAdditionalInfo.slice(1)
+                div_.querySelector('#reportedContactPerson').value = missingPersonsArray[missingPersonsNum].missingContactPerson
+                div_.querySelector('#reportedContactNo').value = missingPersonsArray[missingPersonsNum].missingContactNo
                 
                 //div_.style.marginBottom = "10px"
                 modalBody.appendChild(div_)
@@ -113,12 +113,14 @@ auth.onAuthStateChanged((userAccount) =>{
                             document.getElementById(missingPersonsArrayNum[i]).querySelector('.third').style.display = "block"
 
                             seenButton.addEventListener('click', ()=>{
+                                
                                 if(seenButton.innerHTML=="CANCEL"){
                                     seenSubmit.style.display = "none"
                                     seenButton.innerHTML="HAVE YOU SEEN ME?"
                                     formHidden.style.display = "none"
                                     //submitFind.click()
                                 }else{
+                                    console.log("PINDOT")
                                     formHidden.style.display = "block"
                                     seenButton.innerHTML="CANCEL"
                                     seenSubmit.style.display = "block"

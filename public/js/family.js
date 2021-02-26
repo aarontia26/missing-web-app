@@ -126,7 +126,7 @@ auth.onAuthStateChanged((userAccount) =>{
                             name: addName.value.toLowerCase(),
                             age: addAge.value.toLowerCase(),
                             contactNo: addContactNo.value,
-                            address: addAddress.value.toLowerCase()
+                            address: addAddress.value.charAt(0).toUpperCase() + addAddress.value.slice(1)
                         }
                         const docRef = db.doc("users"+"/"+userUID+"/"+"familymembers"+"/"+addName.value.toLowerCase())
                         docRef.set(data).then(function(){

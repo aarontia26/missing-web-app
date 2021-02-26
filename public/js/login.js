@@ -7,11 +7,13 @@ auth.onAuthStateChanged((userAccount) =>{
 })
 
 
+
+
 const center = document.getElementById('center')
 const popup = document.getElementById('popup')
 const resetPass = document.getElementById('resetPass')
 
-/*--------------FORGOT PASSWORD POP-UP---------------*/
+//--------------FORGOT PASSWORD POP-UP---------------
 document.getElementById('forgotbutton').addEventListener('click', function(){
     popup.style.display = 'initial';
     center.style.display = 'none';

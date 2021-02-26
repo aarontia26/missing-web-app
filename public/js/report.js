@@ -43,6 +43,8 @@ const modalFooter = document.querySelector('.modal-footer')
 const previousBtn = document.querySelector('#previousBtn')
 const nextBtn = document.querySelector('#nextBtn')
 
+var contactPersonName
+var contactPersonNo
 var familyMemberArray = []
 var familyMemberNum = 0
 var currentReportFamilyMemberDisplay = 0
@@ -61,6 +63,7 @@ auth.onAuthStateChanged((userAccount) =>{
             const userRef_ = await userRef.get();
             const docRef_ = db.collection('users').doc(uid).collection('missing')
             const doc_ = await docRef_.get()
+            contactPersonName = userRef_.data().firstname + " " + userRef_.data().lastname
             doc_.forEach(doc =>{
                 memberData = doc.data()
                 familyMemberReported[familyMemberReportedNum] = memberData
@@ -83,9 +86,9 @@ auth.onAuthStateChanged((userAccount) =>{
                 reportedLastOutfit.value = familyMemberReported[0].missingLastOutfit
                 reportedLastSeenPlace.value = familyMemberReported[0].missingLastSeenPlace
                 reportedLastSeenDate.value = familyMemberReported[0].missingLastSeenDate
-                reportedAdditionalInfo.value = familyMemberReported[0].missingAdditionalInfo
-                reportedContactPerson.value = userRef_.data().firstname + " " + userRef_.data().lastname
-                reportedContactNo.value = userRef_.data().phoneNo
+                reportedAdditionalInfo.value = familyMemberReported[0].missingAdditionalInfo.charAt(0).toUpperCase() + familyMemberReported[0].missingAdditionalInfo.slice(1)
+                reportedContactPerson.value = familyMemberReported[0].missingContactPerson
+                reportedContactNo.value = familyMemberReported[0].contactNo
                 previousBtn.style.display = "none"
                 if(familyMemberReportedNum==1){
                     nextBtn.style.display = "none"
@@ -141,8 +144,8 @@ auth.onAuthStateChanged((userAccount) =>{
                     reportedLastOutfit.value = familyMemberReported[currentReportFamilyMemberDisplay].missingLastOutfit
                     reportedLastSeenPlace.value = familyMemberReported[currentReportFamilyMemberDisplay].missingLastSeenPlace
                     reportedLastSeenDate.value = familyMemberReported[currentReportFamilyMemberDisplay].missingLastSeenDate
-                    reportedAdditionalInfo.value = familyMemberReported[currentReportFamilyMemberDisplay].missingAdditionalInfo
-                    
+                    reportedAdditionalInfo.value = familyMemberReported[currentReportFamilyMemberDisplay].missingAdditionalInfo.charAt(0).toUpperCase() + familyMemberReported[currentReportFamilyMemberDisplay].missingAdditionalInfo.slice(1)
+                    reportedContactNo.value = familyMemberReported[currentReportFamilyMemberDisplay].contactNo
                     previousBtn.style.display = "block"
                     console.log(currentReportFamilyMemberDisplay, "HEHE")
                 })
@@ -172,8 +175,8 @@ auth.onAuthStateChanged((userAccount) =>{
                     reportedLastOutfit.value = familyMemberReported[currentReportFamilyMemberDisplay].missingLastOutfit
                     reportedLastSeenPlace.value = familyMemberReported[currentReportFamilyMemberDisplay].missingLastSeenPlace
                     reportedLastSeenDate.value = familyMemberReported[currentReportFamilyMemberDisplay].missingLastSeenDate
-                    reportedAdditionalInfo.value = familyMemberReported[currentReportFamilyMemberDisplay].missingAdditionalInfo
-                    
+                    reportedAdditionalInfo.value = familyMemberReported[currentReportFamilyMemberDisplay].missingAdditionalInfo.charAt(0).toUpperCase() + familyMemberReported[currentReportFamilyMemberDisplay].missingAdditionalInfo.slice(1)
+                    reportedContactNo.value = familyMemberReported[currentReportFamilyMemberDisplay].contactNo
                     nextBtn.style.display = "block"
                     console.log(currentReportFamilyMemberDisplay, "HEHE1")
                 })
@@ -198,7 +201,9 @@ auth.onAuthStateChanged((userAccount) =>{
                         missingLastOutfit: missingLastOutfit.value,
                         missingLastSeenPlace: missingLastSeenPlace.value,
                         missingLastSeenDate: missingLastSeenDate.value,
-                        missingAdditionalInfo: missingAdditionalInfo.value
+                        missingAdditionalInfo: missingAdditionalInfo.value,
+                        missingContactPerson: contactPersonName,
+                        missingContactNo: memberSelected.contactNo
                     }
                     Object.assign(data, memberSelected)
                     const docRef = db.doc("users"+"/"+userUID+"/"+"missing"+"/"+memberSelected.name)
